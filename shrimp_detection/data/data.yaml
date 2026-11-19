@@ -1,0 +1,12 @@
+# YOLOv8 Dataset Configuration for Shrimp Detection
+# Dataset: 247 train + 27 valid images (Roboflow export)
+
+# Dataset paths (relative to this file)
+path: F:/YOLOV8_SHRIMP/shrimp_detection/data  # dataset root dir (current directory)
+train: train/images  # train images (247 images)
+val: valid/images    # validation images (27 images)
+
+# Classes
+nc: 1  # number of classes
+names: ['shrimp']  # class names
+

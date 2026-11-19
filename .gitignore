@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+env.bak/
+venv.bak/
+
+# Environment files
+.env
+.env.local
+
+# IDE & Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+.qoder/
+
+# Training intermediate checkpoints (keep best.pt, last.pt, yolov8n.pt, yolo26n.pt)
+epoch*.pt
+
+# Logs & temp
+*.log
+.pytest_cache/

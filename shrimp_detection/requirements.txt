@@ -1,0 +1,41 @@
+
+# YOLOv8 Shrimp Detection - GPU Requirements
+# Windows with NVIDIA GPU (CUDA 11.8)
+
+# PyTorch with CUDA support (install separately with GPU index)
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+# YOLOv8 and dependencies
+ultralytics>=8.1.0
+opencv-python>=4.8.1.78
+numpy>=1.24.3
+matplotlib>=3.7.3
+Pillow>=10.0.1
+PyYAML>=6.0.1
+scipy>=1.11.3
+
+# Optional but recommended
+pandas>=2.0.3
+seaborn>=0.12.2
+tqdm>=4.66.1
+=======
+Django==5.2.9
+psycopg2-binary==2.9.11
+daphne>=4.0.0
+
+numpy
+opencv-python
+Pillow
+
+ultralytics
+torch
+torchvision
+
+python-telegram-bot==20.3
+anyio
+httpx
+httpcore
+sniffio
+h11
+channels>=4.0.0
+
