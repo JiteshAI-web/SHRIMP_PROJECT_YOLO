@@ -34,16 +34,14 @@ def check_gpu():
 
 def find_data_yaml():
     """Find the correct path to data.yaml"""
-    # Get current directory
-    current_dir = Path.cwd()
-    print(f"📁 Current directory: {current_dir}")
-    
-    # Possible paths to check
+    # Possible paths to check (including relative to train.py)
+    script_dir = Path(__file__).resolve().parent
     possible_paths = [
-        Path('../data/data.yaml'),           # From scripts/ folder
-        Path('data/data.yaml'),              # From root folder
-        Path('../data.yaml'),                # One level up
-        Path('../../data/data.yaml'),        # Two levels up
+        script_dir.parent / "data" / "data.yaml",   # shrimp_detection/data/data.yaml
+        script_dir / ".." / "data" / "data.yaml",
+        Path("../data/data.yaml"),                  # From scripts/ folder
+        Path("data/data.yaml"),                     # From root folder
+        Path("../data.yaml"),
     ]
     
     # Check each path
@@ -93,8 +91,10 @@ def main():
     print(f"📄 Config: {data_yaml_path}")
     print("="*50 + "\n")
     
-    # Load pretrained YOLOv8 model
-    model = YOLO('yolov8n.pt')
+    # Load pretrained YOLOv8 model (find in scripts directory first)
+    script_dir = Path(__file__).resolve().parent
+    model_file = script_dir / 'yolov8n.pt'
+    model = YOLO(str(model_file) if model_file.exists() else 'yolov8n.pt')
     
     print("🚀 Starting training...\n")
     
@@ -145,7 +145,7 @@ def main():
         # Saving
         save=True,
         save_period=10,
-        project='../runs/detect',
+        project=str(script_dir / 'runs' / 'detect'),
         name='train',
         exist_ok=True,
         
